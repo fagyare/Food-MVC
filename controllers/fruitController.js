@@ -20,7 +20,7 @@ module.exports.new = (req, res) => {
 
 // Post/fruits 
 module.exports.create = (req, res) => {
-    
+
     console.log('POST /fruits')
     console.log(req.body)
     if (req.body.readyToEat) {
@@ -29,6 +29,15 @@ module.exports.create = (req, res) => {
         req.body.readyToEat = false
     }
     fruits.push(req.body)
+    res.redirect('/fruits')
+}
+
+// DELETE /fruits/:name
+module.exports.delete = (req, res) => {
+    console.log("DELETE /fruits/:name")
+    console.log(req.params)
+    let index = fruits.findIndex((item) => item.name === req.params.name)
+    fruits.splice(index, 1)
     res.redirect('/fruits')
 }
 

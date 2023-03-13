@@ -9,15 +9,19 @@ const router = express.Router()
 // load our controller and its routes logic
 const fruitController = require('../controllers/fruitController')
 
-// Setup an "index" route for fruits & attaching it to router object
+// Setup an "INDEX" route for fruits & attaching it to router object
 router.get('/', fruitController.index)
 
-// Setup a "new" route for creating fruit
+// Setup a "NEW" route for creating fruit
 router.get('/new', fruitController.new)
-// Set up "create" routee for fruits data 
+
+// Setup a "DELETE" route 
+router.delete('/:name', fruitController.delete)
+
+// Set up "CREATE" routee for fruits data 
 router.post('/', fruitController.create)
 
-// Setup a "show" route for fruits, attach it to the router (show-index tags the index of the types of fruit in the fruits array)
+// Setup a "SHOW" route for fruits, attach it to the router (show-index tags the index of the types of fruit in the fruits array)
 router.get('/:index', fruitController.show) // req.params.index tags specific fruit type in the arr
 
 module.exports = router

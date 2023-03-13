@@ -7,10 +7,11 @@ function Index(props) {
             <h1>Index View</h1>
             <ul>
                 {props.fruits.map((fruit, index) => 
-                    <li>
+                 
+                <li key={index}>
                         <a href={`/fruits/${index}`}><strong>{fruit.name}</strong></a>
                    
-                    </li>
+                </li>
                 )}
             </ul>
             <a href="/fruits/new">Add...</a>
