@@ -1,3 +1,6 @@
+// Require dotenv to setup environment variables in our server
+require('dotenv').config()
+
 // Load express
 const express = require('express')
 
@@ -5,6 +8,12 @@ const express = require('express')
 const app = express()
 
 const PORT = 8088
+
+// Load the connectDB function
+const connectDB = require('./config/db')
+
+// Connect to database
+connectDB()
 
 // Load our fruit,meats,vegetables data from models folder
 // const fruits = require('./models/fruits')

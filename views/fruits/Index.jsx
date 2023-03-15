@@ -9,12 +9,12 @@ function Index(props) {
                 {props.fruits.map((fruit, index) => 
                  
                 <li key={index}>
-                        <a href={`/fruits/${index}`}><strong>{fruit.name}</strong></a>
+                        <a href={`/fruits/${fruit._id}`}><strong>{fruit.name}</strong></a>
                    
                 </li>
                 )}
             </ul>
-            <a href="/fruits/new">Add...</a>
+            <a href="/fruits/new">Add a fruit</a>
         </div>
     )
 }

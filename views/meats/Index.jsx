@@ -1,5 +1,5 @@
 import React from 'react'
-// import { index } from '../../controllers/meatController';
+// import { index } from '../../controllers/fruitController';
 
 function Index(props) {
     return (
@@ -7,14 +7,14 @@ function Index(props) {
             <h1>Index View</h1>
             <ul>
                 {props.meats.map((meat, index) => 
-                    <li>
-                        <a href={`/meats/${index}`}><strong>{meat.name}</strong></a>
-                        
-                        </li>
-               
-
-                    )}
+                 
+                <li key={index}>
+                        <a href={`/meats/${meat._id}`}><strong>{meat.name}</strong></a>
+                   
+                </li>
+                )}
             </ul>
+            <a href="/meats/new">Add...</a>
         </div>
     )
 }

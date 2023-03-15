@@ -16,12 +16,18 @@ router.get('/', fruitController.index)
 router.get('/new', fruitController.new)
 
 // Setup a "DELETE" route 
-router.delete('/:name', fruitController.delete)
+router.delete('/:id', fruitController.delete)
+
+// Setup an "UPDATE" route for updating a specific fruit 
+router.put('/:id', fruitController.update)
 
 // Set up "CREATE" routee for fruits data 
 router.post('/', fruitController.create)
 
+// Setup an "EDIT" route for editing fruit
+router.get('/:id/edit', fruitController.edit)
+
 // Setup a "SHOW" route for fruits, attach it to the router (show-index tags the index of the types of fruit in the fruits array)
-router.get('/:index', fruitController.show) // req.params.index tags specific fruit type in the arr
+router.get('/:id', fruitController.show) // req.params.index tags specific fruit type in the arr
 
 module.exports = router

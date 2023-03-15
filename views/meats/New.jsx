@@ -5,20 +5,21 @@ function New() {
 
     return(
     
-    <div>
-        <h1>New Meats</h1>
-            <form>
-                <label htmlFor="nme">Name: </label><br/>
-                <input type="text" id="nme" /><br/><br/>
-                <label htmlFor="clr">Color:</label><br/>
-                <input type="text" id="clr" /><br/><br/>
-                <label htmlFor="rdy">Ready to Eat: </label>
-                <input type="checkbox" id="rdy" /><br/>
-                <button>Submit</button>
+        <div>
+        <h1>New Meat</h1>
+        <form action="/meats" method="POST">
+            <label htmlFor="nme">Name:</label><br />
+            <input type="text" id="nme" name="name" /><br /><br />
 
+            <label htmlFor="ste">State:</label><br />
+            <input type="text" id="ste" name="state" /><br /><br />
+
+            <label htmlFor="rdy">Ready To Eat:</label>
+            <input type="checkbox" id="rdy" name="readyToEat" /><br /><br />
+
+            <button>Submit</button>
         </form>
-
-  </div>
+    </div>
     );
 }
 
