@@ -47,12 +47,14 @@ module.exports.create = async (req, res) => {
 }
 
 // DELETE /fruits/:name
-module.exports.delete = (req, res) => {
+module.exports.delete = async (req, res) => {
     console.log("DELETE /fruits/:name")
-    console.log(req.params)
-    let index = fruits.findIndex((item) => item.name === req.params.name)
-    fruits.splice(index, 1)
+    try {
+   await Fruit.findByIdAndDelete(req.params.id)    
     res.redirect('/fruits')
+    } catch(err) {
+    console.log(err.message)
+    }
 }
 
 // GET /fruits/:name/edit  changed to GET /fruits/:id/edit 
